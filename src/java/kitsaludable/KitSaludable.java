@@ -7,6 +7,11 @@ public class KitSaludable {
 
     public static void main(String[] args) {
         
+        /*/
+        Abrir el archivo index dentro del directorio
+        dentro 
+        /*/
+        
         
         ingreso inicioDelPrograma = new ingreso();
         
@@ -18,6 +23,7 @@ public class KitSaludable {
         
         laFabrica.Precentacion();
         laFabrica.Opciones();
+        
         }
 
         
