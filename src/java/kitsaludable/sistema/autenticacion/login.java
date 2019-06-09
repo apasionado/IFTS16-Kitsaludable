@@ -13,7 +13,6 @@ import java.util.Scanner;
  */
 public class login {
     
-    ingreso sesion = new ingreso();
     Scanner in = new Scanner(System.in);
     
     //la idea sería que usuario y contrasenia sean los datos que se ingresan para entrar
@@ -21,19 +20,15 @@ public class login {
     private String usuario;
     private String contrasenia;
     
-    String usuarioExistente;
-    String contraseniaExistente;
     
     
-    public void ingreso(){
-        System.out.println("Ingrese su usuario");
-        usuarioExistente = in.nextLine();
-        if(usuarioExistente.equals(usuario)){
+    public void ingreso(listaDeUsuariosExistente u){
+        if(usuario.equals(u.nombre)){
             System.out.println("Ingrese su contrasenia");
-            contraseniaExistente = in.nextLine();
-            if(contraseniaExistente.equals(contrasenia)){
+            contrasenia = in.nextLine();
+            if(contrasenia.equals(u.contrasenia)){
                 System.out.println("Ingreso exitosamente");
-                sesion.usuarioActivo = true;
+                 u.estaEnLinea();
             }
         }  
     }

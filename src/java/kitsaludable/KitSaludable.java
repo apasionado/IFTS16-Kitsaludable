@@ -1,6 +1,5 @@
 package kitsaludable;
 
-import kitsaludable.sistema.autenticacion.ingreso;
 import kitsaludable.sistema.fabrica;
 
 public class KitSaludable {
@@ -13,12 +12,7 @@ public class KitSaludable {
         /*/
         
         
-        ingreso inicioDelPrograma = new ingreso();
-        
         fabrica laFabrica = new fabrica();
-
-        System.out.println("Kit Saludable");
-        inicioDelPrograma.ingresoDelUsuario();
         
         
         laFabrica.Precentacion();
