@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="estilos/estilos.css">
+        <title>Ingreso de Usuario</title>
+        
+    </head>
+    
+    <body>
+        <header>
+            <h1 onclick="location.href='index.html'">KitSaludable</h1>
+        </header>   
+        <div class="modal-dialog text-center">
+            <div class="col-sm-8 main-section">
+                <div class="modal-content">
+                    <div class="col-sm-12 user-img">
+                        <img src="img/usr.png"/>
+                    </div>
+                    <form class="col-sm-12">
+                        <div class="form-group" id="user-group">
+                            <input type="text" class="form-control" placeholder="Nombre de usuario"/>
+                        </div>
+                        <div class="form-goup" id="contraseña-group">
+                            <input type="password" class="form-control" placeholder="Contraseña"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="boton" onclick="ingreso()"><i class="fas fa-sign-in-alt"></i>Ingresar</button>
+                        <div class="col-sm-12">
+                            <a href="Crear cuenta.html">Crear cuenta</a>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+        
+        <style>
+        body{
+            background-size: conver;
+        }
+        .main-section{
+            margin: 0 auto;
+            margin-top: 25%;
+            padding: 0;
+        }
+        .user-img{
+            margin-top: -50px;
+            margin-bottom: 35px;
+        }
+        .user-img img{
+            width: 100px;
+            height: 100px;
+        }
+        .boton{
+            margin-top: -5px;
+            margin-bottom: 5px;
+        }
+        
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- <script>
+        //la funcion ingreso sirve para que: Cuando apreta ingresar, valide con la db si la información es correcta, y luego, ingresa.
+        function ingreso(str){
+            var xhttp;
+            if(str == ""){
+                return;
+            }
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.onreadystatechange == 4 && this.status != 200){
+                    document.//hacer algo cuando apreta login
+                }
+            }
+            /* doc en https://www.w3schools.com/js/tryit.asp?filename=tryjs_ajax_database 
+            https://www.w3schools.com/js/js_ajax_database.asp */
+        }
+    </script> -->
+  </body>
+ 
+</html>
