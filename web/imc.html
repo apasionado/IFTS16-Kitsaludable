@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="i3-edge">
+        <link href="css/bootstrap.css" media="all" rel="stylesheet">
+        
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="estilos/estilos.css">
+        <link href="css/bootstrap.css" media="all" rel="stylesheet">
+        
+        <title>Ingreso de Usuario</title>
+         
+        <script type="text/javascript">
+            // funcion
+            function calcularIMC() {
+                //declaracion de variables
+                var peso, altura, imc, info;
+                //llama a los datos introduccidos
+                peso= document.getElementById("peso").value;
+                altura= document.getElementById("altura").value/100;
+                //calculo del IMC
+                imc= peso/(altura*altura);
+                // muestra resultado con 2 decimales
+                document.getElementById("imc").value = imc.toFixed(2);
+                if(imc<=20.5){
+                    info="Estas " + (altura*altura*20.5-peso).toFixed(1) +" kilos debajo de tu peso";
+                }else if(imc>=25.5){
+                    info="Estas por encima de tu valor de peso ideal, debes bajar "+ (altura*altura*25.5-peso).toFixed(1)+" Kilos";        
+                }else{
+                    info="estas dentro de los valores normales segun el IMC";
+                }
+                //resultado al box
+                document.getElementById("info").value=info;        
+            }   
+        </script>
+        
+    </head>
+    
+    <body>
+        <header>
+            <h1 onclick="location.href='index.html'">KitSaludable</h1>
+        </header>
+  
+        <div class="modal-dialog">
+            <div class="col-12 main-section">
+                <div class="modal-content bg-dark ">
+                    <div class="col-sm-11 user-img text-center">
+                        <img src="img/usr.png"/><!-- user image-->
+                    </div>
+                    
+                    <!-- ** Columna IZQUIERDA informacion** -->
+                    <div class="row container justify-content-around">
+                         
+                        <form class=" col-6" action="#" name="f1" id="f1">
+                            <h1 class="titulo-principal">Calculo del peso ideal</h1>
+                            <input class="form-control  " type="number" name="peso" id="peso" size="3" maxlength="4" placeholder="Peso">
+                            <input class="form-control " type="number" name="altura" id="altura" size="3" maxlength="3" placeholder="Altura">
+                            <input class="btn btn-primary" type="button" value="Actualizar" onclick="calcularIMC()">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Imc">
+                              IMC
+                            </button>
+                        </form>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="Imc" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content" style= "height: 400px">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title text-center" id="ModalLabel">Resultados del calculo del IMC</h3>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="calcularIMC()">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="modal-body " style= "height: 50px">
+                                        <row>
+                                            <div class="col-12 h-25" >
+                                                <p> IMC: 
+                                                <input class="" type="text" name="imc" id="imc"</p>
+                                            </div>
+                                            <div class="col-12 h-75"> 
+                                                <input class= "w-100 h-100"type="text" name="info" id="info">
+                                            </div>   
+                                        </row>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+         
+            </div>   
+        </div>
+        
+        <style>
+        body{
+            background: url(img/alimentos-sanos.jpg) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
+        .titulo-principal{
+            color:#fff;
+        font-size: 20px;
+        margin: 0px;
+        padding: 10px 0;
+        text-align: center;
+        }
+        .main-section{
+            margin: 0 auto;
+            margin-top: 15%;
+            padding: 0;
+        }
+        .user-img{
+            margin-top: -50px;
+            margin-bottom: 15px;
+        }
+        .user-img img{
+            width: 100px;
+            height: 100px;
+        }
+        .form-control{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .btn{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }   
+    </style>
+    
+    <!-- Bootstrap CSS -->
+        <script src="js/jquery/jquery-3.4.1.min.js"></script>
+        <script src="js/jquery/jquery-3.4.1.slim.min.js"></script>
+        <script src="js/popper/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
