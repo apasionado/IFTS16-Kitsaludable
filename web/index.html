@@ -6,67 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/bootstrap.css" media="all" rel="stylesheet">
     <link rel="stylesheet" href="estilos/estilos.css">
-    
-
-  <title>Kit Saludable</title>
-  </head>
   
+  <title>Kit Saludable</title>
+  
+  </head>
   <body>
+      
     <div id="contenedor">
         <header>
             <h1 onclick="location.href='index.html'">KitSaludable</h1>
         </header>
+        
         <nav>
             <ul>                
                 <li><button class="btn btn-primary" onclick="location.href=
-                  '#'" >Acerca</button>
+                  'imc.html'" >IMC</button>
                 </li>
                 <li><button class="btn btn-primary" onclick="location.href=
-                  'ingresa.html'" > Ingresar</button>
+                  'ingresa.html'" >Ingresar</button>
                 </li>
                 <li><button class="btn btn-primary" onclick="location.href=
                   '#'" >Contacto</button>
                 </li>
                 <li><button class="btn btn-primary"onclick="location.href=
-                  'Crear cuenta.html'"> Crear cuenta</button>
+                  'Crear cuenta.html'">Crear cuenta</button>
                 </li>
             </ul>
         </nav>
+        
         <div id="contenido">
+            
             <section id="banner">
-              
               <a href="#"><img src="img/banner.jpg" alt="banner" border="0"></a> 
             </section>
+            
             <section id="alimentos">
                 <article>
                   <h2><a>ALIMENTOS</a></h2>
                   <img src="img/alimentos-sanos.jpg" alt="Dietas" width="350" height="350" class="img-responsive" onclick="location.href='alimentos.html'">
                 </article>
             </section>    
+            
             <section id="ejercicios">  
                 <article>
-                  <h2><a> EJERCICIOS</a></h2>
+                  <h2><a>EJERCICIOS</a></h2>
                   <img src="img/ella-el.jpg" alt="Ejercicios" width="350" height="350" class="img-responsive" onclick="location.href='ejercicios.html'">
                 </article>
             </section>
+            
             <section id="banner">
               <a href="#"><img src="img/banner.jpg" ></a>
-              
-            </section>
         </div>
-        <footer>
-          Todos los derechos reservados 2019
+        
+        <footer class="fixed-bottom">
+            Todos los derechos reservados 2019 
         </footer>
     </div>
-
-    
+      
     <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  
+    <script src="js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
   </body> 
 </html>
