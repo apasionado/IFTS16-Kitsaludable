@@ -1,7 +1,13 @@
 -- -----------------------------------------------------
+-- Schema DbKitSaludable
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `DbKitSaludable` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci ;
+USE `DbKitSaludable` ;
+
+-- -----------------------------------------------------
 -- Tabla clientes
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS Clientes (
+CREATE  TABLE IF NOT EXISTS `DbKitSaludable`.`Clientes` (
   CL_ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   CL_Nom varchar(45) NOT NULL,
   CL_Apellido varchar(45) NOT NULL,
@@ -23,7 +29,7 @@ CREATE  TABLE IF NOT EXISTS Clientes (
 -- -----------------------------------------------------
 -- Tabla dietas
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS Dietas (
+CREATE TABLE IF NOT EXISTS `DbKitSaludable`.`Dietas` (
   DT_ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   DT_Nombre varchar(45) NOT NULL,
   DT_Comidas_ID int(11)  NULL,
@@ -39,8 +45,13 @@ CREATE TABLE IF NOT EXISTS Dietas (
 -- -----------------------------------------------------
 -- Tabla comidas
 -- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS Comidas (
+CREATE  TABLE IF NOT EXISTS `DbKitSaludable`.`Comidas` (
   CM_ID int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   CM_Nombre varchar(45) NOT NULL,
   CM_Calorias varchar(45) NOT NULL,
   ) ENGINE=INNODB;
+  
+-- -----------------------------------------------------
+-- SELECTS
+-- -----------------------------------------------------
+Select * from Clientes;
