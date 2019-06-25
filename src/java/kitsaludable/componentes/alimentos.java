@@ -1,23 +1,21 @@
 package kitsaludable.componentes;
 
-import java.util.List;
 
 public class alimentos {
     
-    private String nombre;
+    private String nom_alimentos;
     private int calorias;
-    // alimentos contiene una lista de dietas como atributo
-    private List<dietas> listaDietas;
+    private String nom_dietas;
     
     
-    public alimentos (String nom,int cal, List<dietas> ld){
-        this.nombre = nom;
+    public alimentos (String nom_alm,int cal, String nom_diet){
+        this.nom_alimentos = nom_alm;
         this.calorias = cal;
-        this.listaDietas = ld;
+        this.nom_dietas = nom_diet;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNom_alimentos() {
+        return nom_alimentos;
     }
 
     public int getCalorias() {
@@ -28,24 +26,18 @@ public class alimentos {
         this.calorias = calorias;
     }
 
-    public void setListaDietas(List<dietas> listaDietas) {
-        this.listaDietas = listaDietas;
+    public String getNom_dietas() {
+        return nom_dietas;
     }
 
-    public List<dietas> getListaDietas() {
-        return listaDietas;
+    public void setNom_dietas(String nom_dietas) {
+        this.nom_dietas = nom_dietas;
     }
-    /*este es una funsion que al recorrerla con el FOR y un IF comprueba si dentro de la lista de dieta se encuenta el nombre
-    de la dieta elegida, si esta devuelve un true sino un false*/
-    
 
-    public boolean corredorListaDietas(String nombreDieta) {
-        for (int j = 0; j < listaDietas.size(); j++) {
-            if(listaDietas.get(j).getNombreDieta().equalsIgnoreCase(nombreDieta)){
-               return true;
-            }
-        } 
-        return false;
+    @Override
+    public String toString() {
+        return "alimentos{" + "nom_alimentos=" + nom_alimentos + ", calorias=" + calorias + ", nom_dietas=" + nom_dietas + '}';
     }
+
     
 }
