@@ -15,8 +15,8 @@ public class controlador extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
     
-        String dieta= request.getParameter("selector");
-        String boton=request.getParameter("boton");
+        String dieta = request.getParameter("selector");
+        String boton = request.getParameter("boton");
          if(boton != null){
              
         fabrica_BBDD fb = new fabrica_BBDD();
