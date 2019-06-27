@@ -51,42 +51,4 @@ public class controlador extends HttpServlet {
     }
     
 }
-    /*
-    private fabrica_BBDD fabricaAlimentos;
   
-    @Override
-    public void init()throws ServletException{
-        super.init(); 
-        try{
-            fabricaAlimentos= new fabrica_BBDD();
-        }catch(Exception e){
-            throw new ServletException(e);
-        }
-    }
-
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-        
-        //Obtener las lista de alimentos desde fabrica
-        List<alimentos> alimentos_delControlador;
-        try{
-            alimentos_delControlador=fabricaAlimentos.getAlimentos();
-        
-        //agregar la lista de alimentos al request
-        
-            request.setAttribute("Lista_Alimentos", alimentos_delControlador);
-        //enviar ese request a el jsp
-            
-            RequestDispatcher miDispatcher=request.getRequestDispatcher("/alimentos.jsp");
-            
-            miDispatcher.forward(request, response);
-            
-            }catch(Exception e){
-            e.printStackTrace();
-        }
-    }
-
-
-}
-*/
