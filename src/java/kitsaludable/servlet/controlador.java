@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import kitsaludable.componentes.alimentos;
-import kitsaludable.componentes.listas;
 import kitsaludable.sistema.fabrica_BBDD;
 
 public class controlador extends HttpServlet {
@@ -23,8 +22,6 @@ public class controlador extends HttpServlet {
         List<alimentos> alimentos_delControlador;
         try{
             alimentos_delControlador =  fb.getAlimentos(dieta);
-            listas listaDietas  = new listas ();
-            listaDietas.setLista(alimentos_delControlador);
             request.setAttribute("lista dietas", alimentos_delControlador);
             request.getRequestDispatcher("/alimentos.jsp").forward(request, response);
             
