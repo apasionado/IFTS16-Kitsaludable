@@ -1,0 +1,11 @@
+
+    El programa esta compuesto de una clase con atributos para ingresar a la base de datos llama database.java
+    En la fabrica hay un metodo principal que devuelve una lista de alimentos a través del metodo get alimento recibe una dieta y hace una consulta sql para poder pasarle los atributos a la clase alimentos (la dieta va a modificar la consulta sql (select) )
+    
+   
+    en alimentos.java estan todos los atributos de alimentos
+    lista.java no se usa
+    
+    controlador.java obtiene la lista de alimentos de la dieta y la envia a jsp
+    
+    

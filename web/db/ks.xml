@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 3.5.1
+- http://www.phpmyadmin.net
+-
+- Servidor: localhost
+- Tiempo de generación: 25-06-2019 a las 22:24:09
+- Versión del servidor: 5.5.24-log
+- Versión de PHP: 5.4.3
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="http://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="ks" collation="latin1_swedish_ci" charset="latin1">
+            <pma:table name="alimentos">
+                CREATE TABLE `alimentos` (
+                  `id_alimentos` int(10) NOT NULL AUTO_INCREMENT,
+                  `nombre_alimentos` varchar(30) NOT NULL,
+                  `calorias` int(20) NOT NULL,
+                  `dietas_id` int(30) NOT NULL,
+                  PRIMARY KEY (`id_alimentos`),
+                  KEY `dietas_id` (`dietas_id`),
+                  CONSTRAINT `alimentos_ibfk_1` FOREIGN KEY (`dietas_id`) REFERENCES `dietas` (`id_dietas`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+            </pma:table>
+            <pma:table name="dietas">
+                CREATE TABLE `dietas` (
+                  `id_dietas` int(10) NOT NULL AUTO_INCREMENT,
+                  `nombre_dietas` varchar(50) NOT NULL,
+                  PRIMARY KEY (`id_dietas`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Base de datos: 'ks'
+    -->
+    <database name="ks">
+        <!-- Tabla alimentos -->
+        <table name="alimentos">
+            <column name="id_alimentos">1</column>
+            <column name="nombre_alimentos">pizza</column>
+            <column name="calorias">500</column>
+            <column name="dietas_id">2</column>
+        </table>
+        <table name="alimentos">
+            <column name="id_alimentos">2</column>
+            <column name="nombre_alimentos">asado</column>
+            <column name="calorias">15000</column>
+            <column name="dietas_id">3</column>
+        </table>
+        <table name="alimentos">
+            <column name="id_alimentos">3</column>
+            <column name="nombre_alimentos">milanesa de carne</column>
+            <column name="calorias">400</column>
+            <column name="dietas_id">3</column>
+        </table>
+        <table name="alimentos">
+            <column name="id_alimentos">4</column>
+            <column name="nombre_alimentos">pastas</column>
+            <column name="calorias">130</column>
+            <column name="dietas_id">1</column>
+        </table>
+        <!-- Tabla dietas -->
+        <table name="dietas">
+            <column name="id_dietas">1</column>
+            <column name="nombre_dietas">dieta del limon</column>
+        </table>
+        <table name="dietas">
+            <column name="id_dietas">2</column>
+            <column name="nombre_dietas">dieta de harinas</column>
+        </table>
+        <table name="dietas">
+            <column name="id_dietas">3</column>
+            <column name="nombre_dietas">dieta proteica</column>
+        </table>
+    </database>
+</pma_xml_export>
