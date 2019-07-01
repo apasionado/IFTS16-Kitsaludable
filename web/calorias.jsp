@@ -14,7 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form class="container" action="controlador_cal" method="post">
+        <form class="container" action="controlador_calorias.do" method="post">
             <h3 class="container-fluid">Cantidad de calorias</h3>
                  <select name="select" multiple>
                      <option value ="" disable selected>--Seleccione una Calorias--</option>
@@ -27,8 +27,8 @@
             <input  name="boton1" type="submit" value="Enviar"/>
                  </form>
        
-        <div class ="container">
-            <h3>Lista de alimentos con las calorias determinadas</h3> 
+        <div class ="container bg-dark">
+            <h1>Lista de alimentos con las calorias determinadas</h1> 
             <table class="table table-striped table-bordered table-hover">
                 <tr class="success">
                     <th>Alimentos</th>
@@ -37,7 +37,7 @@
                 </tr>
                  <% 
                      List<alimentos> listaCalorias = null;
-                    listaCalorias= (List<alimentos>)request.getAttribute("lista calorias");
+                     listaCalorias= (List<alimentos>)request.getAttribute("lista calorias");
                 if(listaCalorias != null){
                 for(alimentos lc: listaCalorias){%>
                 <tr>

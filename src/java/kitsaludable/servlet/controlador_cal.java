@@ -27,12 +27,11 @@ public class controlador_cal extends HttpServlet {
         las listas, le haga el amor con un buen filtro de calorias en base a las calorias que ya existen, y se la pase en una variable a este servlet
         
         */
-        /*
+     
          
          String calorias = request.getParameter("select");
          String boton2 = request.getParameter("boton2");
          List<alimentos> listaCalorias = new ArrayList<>();
-         try{
          if(boton2 != null){
              int cal = (int)Integer.parseInt(calorias);
              
@@ -45,8 +44,3 @@ public class controlador_cal extends HttpServlet {
          
          }
          }
-         catch(Exception e){
-                 e.printStackTrace();
-                 }*/
-         }
-}

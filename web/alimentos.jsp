@@ -11,11 +11,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="i3-edge">
+        <!--iconito-->
+        <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+
+
         <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="css/bootstrap.css" media="all" rel="stylesheet">
         <link rel="stylesheet" href="estilos/estilos.css">
+  
         <title>Alimentos</title>
     </head>
     
@@ -24,53 +31,84 @@
         <header>
             <h1 onclick="location.href='index.html'">KitSaludable</h1>
         </header>
+
+            <form class="container"  action="controlador.do" method="post"  >
+                <select name="selector" multiple>
+                    <option disable selected>--Seleccione una Dieta--</option>
+                    <option value ="dieta proteica">dieta proteica</option>
+                    <option value ="dieta de harinas">dieta de harinas</option>
+                    <option value ="dieta del limon">dieta del limon</option>
+                    <option value ="Azucares">Azucares</option>
+                    <option value ="Vegetariana">Vegetariana</option>
+                </select>
+                <input  name="boton" type="submit" value="Enviar"/>
+            </form>
+
+            <div class ="container bg-dark">
+                
+                <h1>Lista de alimentos de la dieta seleccionada</h1>
+               <table class="table table-striped table-bordered table-hover">
+                    <tr class="success">
+                        <th>Alimentos</th>
+                        <th>Calorias</th>
+                        <th>Descripcion</th>
+                    </tr>
+            <% 
+                List<alimentos> losAlimentos = null;
+
+                losAlimentos=(List<alimentos>) request.getAttribute("lista dietas");
+                if(losAlimentos != null){
+                    for(alimentos la : losAlimentos){%>
+                    <tr>                   
+                        <td><%= la.getNom_alimentos() %></td>
+                        <td><%= la.getCalorias() %></td>
+                        <td><%= la.getNom_dietas() %></td>      
+                    </tr>
+                    <% 
+                    }
+                }
+            %>
+                </table>
+            </div>
+
+            <jsp:include page="calorias.jsp"></jsp:include>
+            
+            
+
+   
+    <style>
+        body{
+        background: url(img/alimentos-sanos.jpg) no-repeat center center fixed; 
         
-        
-        <form class="container"  action="controlador.do" method="post"  >
-            <select name="selector" multiple>
-                <option disable selected>--Seleccione una Dieta--</option>
-                <option value ="dieta proteica">dieta proteica</option>
-                <option value ="dieta de harinas">dieta de harinas</option>
-                <option value ="dieta del limon">dieta del limon</option>
-                <option value ="Azucares">Azucares</option>
-                <option value ="Vegetariana">Vegetariana</option>
-            </select>
-             <input  name="boton" type="submit" value="Enviar"/>
-        </form>
-            <div class ="container">
-            <h3>Lista de alimentos de la dieta seleccionada</h3>
-           <table class="table table-striped table-bordered table-hover">
-                <tr class="success">
-                    <th>Alimentos</th>
-                    <th>Calorias</th>
-                    <th>Descripcion</th>
-                </tr>
-        <% 
-            List<alimentos> losAlimentos = null;
-            losAlimentos=(List<alimentos>) request.getAttribute("lista dietas");
-            if(losAlimentos != null){
-                for(alimentos la : losAlimentos){%>
-                <tr>
-                    
-                    <td><%= la.getNom_alimentos() %></td>
-                    <td><%= la.getCalorias() %></td>
-                    <td><%= la.getNom_dietas() %></td>
-                    
-                </tr>
-                <% 
-            }
-            }
-               %>
-            </table>
-        </div>
-        
-               <jsp:include page="calorias.jsp"></jsp:include>
-        
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    </body>
+        background-size: cover;}
+        header{
+            background:#2c3e50;
+            text-align: center;
+        }
+        h1, h2, h3{
+            margin: 0px;}
+        h1{
+         color:#fff;
+         font-size: 40px;
+         margin: 0px;
+         padding: 10px 0;
+         text-align: center;}
+        h2{
+            color:#fff;
+            font-size: 20px;
+            margin: 0px;}
+        h3{
+            color:#2c3e50;
+            font-size: 20px;
+            margin: 0px;}   
+    </style>
+    
+    <!--Bootstrap CSS -->
+    <script src="js/jquery/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery/jquery-3.4.1.slim.min.js"></script>
+    <script src="js/popper/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script></body>
+    
     <footer> 
         <br></br>
         <br></br>
