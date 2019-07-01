@@ -31,9 +31,9 @@
             <h1>Lista de alimentos con las calorias determinadas</h1> 
             <table class="table table-striped table-bordered table-hover">
                 <tr class="success">
-                    <th>Alimentos</th>
-                    <th>Calorias</th>
-                    <th>Descripcion</th>
+                    <th><h2>Alimentos</h2></th>
+                    <th><h2>Calorias</h2></th>
+                    <th><h2>Descripcion</h2></th>
                 </tr>
                  <% 
                      List<alimentos> listaCalorias = null;
@@ -41,9 +41,9 @@
                 if(listaCalorias != null){
                 for(alimentos lc: listaCalorias){%>
                 <tr>
-                    <td><%= lc.getNom_alimentos() %></td>
-                    <td><%= lc.getCalorias() %></td>
-                    <td><%= lc.getNom_dietas() %></td>
+                    <td><h2><%= lc.getNom_alimentos() %></h2></td>
+                    <td><h2><%= lc.getCalorias() %></h2></td>
+                    <td><h2><%= lc.getNom_dietas() %></h2></td>
                     <td>-</td>
                 </tr>
                 <% 

@@ -44,14 +44,14 @@
                 <input  name="boton" type="submit" value="Enviar"/>
             </form>
 
-            <div class ="container bg-dark">
+            <div class ="container bg-dark" >
                 
                 <h1>Lista de alimentos de la dieta seleccionada</h1>
                <table class="table table-striped table-bordered table-hover">
                     <tr class="success">
-                        <th>Alimentos</th>
-                        <th>Calorias</th>
-                        <th>Descripcion</th>
+                        <th><h2>Alimentos</h2></th>
+                        <th><h2>Calorias</h2></th>
+                        <th><h2>Descripcion</h2></th>
                     </tr>
             <% 
                 List<alimentos> losAlimentos = null;
@@ -60,9 +60,9 @@
                 if(losAlimentos != null){
                     for(alimentos la : losAlimentos){%>
                     <tr>                   
-                        <td><%= la.getNom_alimentos() %></td>
-                        <td><%= la.getCalorias() %></td>
-                        <td><%= la.getNom_dietas() %></td>      
+                        <td><h2><%= la.getNom_alimentos() %></h2></td>
+                        <td><h2><%= la.getCalorias() %></h2></td>
+                        <td><h2><%= la.getNom_dietas() %></h2></td>      
                     </tr>
                     <% 
                     }
@@ -73,9 +73,6 @@
 
             <jsp:include page="calorias.jsp"></jsp:include>
             
-            
-
-   
     <style>
         body{
         background: url(img/alimentos-sanos.jpg) no-repeat center center fixed; 
@@ -88,11 +85,11 @@
         h1, h2, h3{
             margin: 0px;}
         h1{
-         color:#fff;
-         font-size: 40px;
-         margin: 0px;
-         padding: 10px 0;
-         text-align: center;}
+            color:#fff;
+            font-size: 40px;
+            margin: 0px;
+            padding: 10px 0;
+            text-align: center;}
         h2{
             color:#fff;
             font-size: 20px;
@@ -110,7 +107,6 @@
     <script src="js/bootstrap.min.js"></script></body>
     
     <footer> 
-        <br></br>
         <br></br>
     </footer>
 </html>
